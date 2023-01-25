@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<?php
+$students=[
+    "user1"=>[1,"leila","nazari",19],
+    "user2"=>[2,"mobina","zarei",19],
+    "user3"=>[3,"mahsa","moradi",14],
+    "user4"=>[4,"hadis","mehrjoo",34],
+];
+function tblStudent($x){
+    foreach ($x as $value){
+        echo "
+        <tr>
+        <td>$value[0]</td>
+        <td>$value[1]</td>
+        <td>$value[2]</td>
+        <td>$value[3]</td>
+        <td style='text-align: center'><a href='update.php?idd=$value[0]'><img src='images/search.svg' alt=''></a></td>
+        <td><a href='' style='color: red; padding: 4px'>Delete</a></td>
+        </tr>";
+    }
+}
+?>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<table border="1">
+    <thead>
+    <tr>
+        <th>id</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>age</th>
+        <th>update</th>
+        <th>delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php tblStudent($students); ?>
+    </tbody>
+</table>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="Css/main.css">
+</head>
+<body>
+<form action="" method="get">
+    <select name="Choose" id="Choose">
+        <?php
+        if (isset($_GET["Choose"]) && !empty($_GET["Choose"])){
+            $count=$_GET["Choose"];
+        }else{
+            $count=5;
+        }
+        $selected="";
+        for ($i=5;$i<=20;$i+=5){
+            if ($i==$count){
+                $selected='selected';
+            }else{
+                $selected='';
+            }
+            echo "<option value='$i' $selected>$i</option>";
+        }
+        ?>
+    </select>
+    <input type="submit" value="send">
+</form>
+<div class="parent">
+    <div class="inner">
+        <?php
+
+        for($i=0;$i<$count;$i++){
+
+            ?>
+            <div class="card">
+                <div class="top"><img src="images/box1.jpg" alt=""></div>
+                <div class="bottom"><span>box1</span></div>
+            </div>
+            <?php
+        }
+        ?>
+    </div>
+</div>
+</body>
+</html>
